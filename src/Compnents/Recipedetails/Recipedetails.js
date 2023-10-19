@@ -1,24 +1,21 @@
 import React from "react";
 
-function RecipeDetails({ selectedRecipe }) {
+const RecipeDetails = ({ selectedRecipe }) => {
   if (!selectedRecipe) {
-    return <p>Select a recipe to view details</p>;
+    return (
+      <div className="recipe-details">Select a recipe to view details.</div>
+    );
   }
 
   return (
     <div className="recipe-details">
-      <h2>Recipe Details</h2>
-      <h3>{selectedRecipe.name}</h3>
-      <p>Author: {selectedRecipe.author}</p>
+      <h2>Recipe by: {selectedRecipe.author}</h2>
       <img
-        style={{
-          width: "200px",
-          height: "100px",
-        }}
+        style={{ height: "100px", width: "200px" }}
         src={selectedRecipe.image}
-        alt={selectedRecipe.name}
+        alt={selectedRecipe.author}
       />
-      <h4>Ingredients:</h4>
+      <h3>Ingredients:</h3>
       <ul>
         {selectedRecipe.ingredients.map((ingredient, index) => (
           <li key={index}>{ingredient}</li>
@@ -26,6 +23,6 @@ function RecipeDetails({ selectedRecipe }) {
       </ul>
     </div>
   );
-}
+};
 
 export default RecipeDetails;

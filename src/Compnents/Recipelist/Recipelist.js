@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
-function RecipeList({ recipes, onSelectRecipe }) {
+const RecipeList = ({ recipes, onSelectRecipe }) => {
   return (
     <div className="recipe-list">
-      <h2>Recipe List</h2>
       <ul>
         {recipes.map((recipe) => (
           <li key={recipe.id} onClick={() => onSelectRecipe(recipe)}>
@@ -13,6 +12,6 @@ function RecipeList({ recipes, onSelectRecipe }) {
       </ul>
     </div>
   );
-}
+};
 
 export default RecipeList;
