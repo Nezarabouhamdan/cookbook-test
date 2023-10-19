@@ -2,13 +2,11 @@ import React from "react";
 
 const RecipeDetails = ({ selectedRecipe }) => {
   if (!selectedRecipe) {
-    return (
-      <div className="recipe-details">Select a recipe to view details.</div>
-    );
+    return <div>Select a recipe to view details.</div>;
   }
 
   return (
-    <div className="recipe-details">
+    <div>
       <h2>Recipe by: {selectedRecipe.author}</h2>
       <img
         style={{ height: "100px", width: "200px" }}
